@@ -1,5 +1,7 @@
 module.exports = {
-    content: ["./templates/**/*.{html,twig}"],
+    content: [
+        "./templates/**/*.{html,twig}"
+    ],
     theme: {
         extend: {},
     },
