@@ -1,4 +1,3 @@
-// script.js
 const circle = document.getElementById('cursor-circle');
 let mouseX = 0, mouseY = 0;
 
@@ -18,4 +17,3 @@ document.addEventListener('mousemove', (e) => {
 
 // Lance la boucle d'animation
 updatePosition();
-``
