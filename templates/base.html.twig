@@ -12,29 +12,34 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body class="bg-[#26292F] text-white">
-    <div class="circle" id="cursor-circle"></div>
-        <header>
+    <body class="bg-[#26292F] text-white flex flex-col min-h-screen">
+        <div class="circle" id="cursor-circle"></div>
+
+        <header class="flex-shrink-0">
             <div class="flex h-[80px]">
-            <div class="bg-[#14151B] flex-1 mr-[1px]"></div>
-            <div class="bg-[#14151B] w-[450px] shrink-0 mr-[1px]">
-                <div class="text-2xl flex p-5 justify-center">
-                    <img class="w-8" src="/img/nd-blanc.png" alt="Description de l'image">
-                    <div class="pl-10 font-semibold">Noé Dambreville</div>
+                <div class="bg-[#14151B] flex-1 mr-[1px]"></div>
+                <div class="bg-[#14151B] w-[450px] shrink-0 mr-[1px]">
+                    <div class="text-2xl flex p-5 justify-center">
+                        <img class="w-8" src="/img/nd-blanc.png" alt="Description de l'image">
+                        <a href="{{ path('app_home') }}" class="pl-10 font-semibold">Noé Dambreville</a>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-[#14151B] w-[450px] shrink-0"></div>
-            <div class="bg-[#14151B]  w-[450px] shrink-0 ml-[1px]">
-                <div class="text-2xl flex p-5 justify-center">
-                    <div class=" font-semibold">Contact</div>
+                <div class="bg-[#14151B] w-[450px] shrink-0"></div>
+                <div class="bg-[#14151B]  w-[450px] shrink-0 ml-[1px]">
+                    <div class="text-2xl flex p-5 justify-center">
+                        <div class="font-semibold">
+                            <a href="{{ path('app_contact') }}">Contact</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-[#14151B] flex-1 ml-[1px]"></div>
+                <div class="bg-[#14151B] flex-1 ml-[1px]"></div>
             </div>
         </header>
-            {% block body %}{% endblock %}
 
-        <footer>
+        <main class="flex-grow">
+            {% block body %}{% endblock %}
+        </main>
+        <footer class="flex-shrink-0">
             <div class="flex h-[80px] pt-[1px]">
                 <div class="bg-[#14151B] flex-1 mr-[1px]"></div>
                 <div class="bg-[#14151B] w-[450px] shrink-0 mr-[1px]">
@@ -49,8 +54,8 @@
                     </div>
                 </div>
                 <div class="bg-[#14151B]  w-[450px] shrink-0 ml-[1px]">
-                    <div class="container mx-auto p-7 text-center">
-                        <div>Mentions légales</div>
+                    <div class="container mx-auto p-7 text-center font-semibold">
+                        <a href="{{ path('app_mention_legales') }}">Mentions légales</a>
                     </div>
                 </div>
                 <div class="bg-[#14151B] flex-1 ml-[1px]"></div>
