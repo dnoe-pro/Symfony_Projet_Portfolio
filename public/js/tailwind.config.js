@@ -5,7 +5,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Roboto', 'sans-serif'], 
+                rubik: ['Rubik', 'sans-serif'],
+                
               },
         },
     },
