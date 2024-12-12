@@ -7,7 +7,9 @@ module.exports = {
             fontFamily: {
                 rubik: ['Rubik', 'sans-serif'],
                 
-              },
+                oswald: ['Oswald', 'sans-serif'],
+                robotoMono: ['Roboto Mono', 'monospace'],
+            },
         },
     },
     plugins: [],
