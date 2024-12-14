@@ -8,4 +8,16 @@
     background: radial-gradient(circle, #1753F0 40%, #26292f 70%);
     z-index: -1;
     opacity: 0.8;
-}   
+}  
+/* LISTE DE FONT */
+.font-oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.font-roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.font-roboto-flex {
+    font-family: 'Roboto Flex', sans-serif;
+}

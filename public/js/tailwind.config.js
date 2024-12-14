@@ -1,14 +1,18 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
     content: [
         "./templates/**/*.{html,twig}"
     ],
     theme: {
-        extend: {
-            fontFamily: {
-                rubik: ['Rubik', 'sans-serif'],
-                
-                oswald: ['Oswald', 'sans-serif'],
-                robotoMono: ['Roboto Mono', 'monospace'],
+        colors:{
+            dark : '#14151B',
+
+
+        },      
+        extend: {           
+            fontFamily: {                
+
             },
         },
     },
