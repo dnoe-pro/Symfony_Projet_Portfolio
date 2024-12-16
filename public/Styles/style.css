@@ -10,14 +10,9 @@
     opacity: 0.8;
 }  
 /* LISTE DE FONT */
-.font-oswald {
-    font-family: 'Oswald', sans-serif;
-}
-
 .font-roboto-mono {
     font-family: 'Roboto Mono', monospace;
 }
-
 .font-roboto-flex {
     font-family: 'Roboto Flex', sans-serif;
 }
