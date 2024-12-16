@@ -1,14 +1,20 @@
 # PORFOLIO 
 
+## VERSIONS
+
 
 ## CONFIGURATION
-Configuration d'affichage et suggestions pour **HTML** et **Tailwind CSS** avec le fichier dans [Visuel Studio Code].
 
-Installer l'extension "Twig Language 2", 
+Chaque clonage du projet, il faut installer le composer via la commande suivante :
+```
+composer install
+```
 
-Ensuite -> %appdata%/Code/user/settings.json 
+Configuration d'affichage et suggestions pour **HTML** et **Tailwind CSS** avec le fichier dans [Visuel Studio Code]().
+- Installer l'extension "Twig Language ou Twig Language 2", 
+- Ensuite -> %appdata%/Code/user/settings.json 
 
-Dans ce fichier .json ajouter des paramètres suivants :
+Dans ce fichier settings.json ajouter des paramètres suivants :
 ```
 {
     "extensions.autoUpdate": false,
@@ -31,4 +37,4 @@ Dans ce fichier .json ajouter des paramètres suivants :
     ],
 }
 ```
-Dans [Visuel Studio Code], il faut recharcher la fenêtre pour afficher correctement via la commande : ctrl + Alt + P
+Recharger la fenêtre pour afficher correctement via la commande : ctrl + Alt + P
