@@ -6,7 +6,10 @@
         <link rel="stylesheet" href="/Styles/style.css">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="js/curseur-gradiant.js" defer></script>
+        {# FONTS #}
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto+Mono:wght@400;500;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+        {# ICONS #}
+        <link rel="import" href="https://img.icons8.com/?size=100&id=59777&format=png&color=000000.html">
         {% block stylesheets %}
         {% endblock %}
         {% block javascripts %}
@@ -29,7 +32,7 @@
                 <div class="bg-[#14151B]  w-[450px] shrink-0 ml-[1px]">
                     <div class="text-2xl flex p-5 justify-center">
                         <div class="font-semibold">
-                            <a href="{{ path('app_contact') }}">Contact</a>
+                            <a href="{{ path('app_contact')}}">Contact</a>
                         </div>
                     </div>
                 </div>
