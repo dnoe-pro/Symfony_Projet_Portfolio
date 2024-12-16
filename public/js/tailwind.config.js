@@ -6,14 +6,9 @@ module.exports = {
     ],
     theme: {
         colors:{
-            dark : '#14151B',
-            
-
-
         },      
         extend: {           
             fontFamily: {                
-
             },
         },
     },
