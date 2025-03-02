@@ -5,17 +5,7 @@ body {
 .font-roboto-flex {
     font-family: 'Roboto Flex', sans-serif;
 }
-.circle {
-    position: fixed;
-    pointer-events: none;
-    will-change: transform;
-    width: 500px;
-    height: 500px;
-    border-radius: 9999px;
-    background: radial-gradient(circle, #1753F0 40%, #f7fafd 70%);
-    z-index: -1;
-    opacity: 0.8;
-}  
+ 
 
 
 

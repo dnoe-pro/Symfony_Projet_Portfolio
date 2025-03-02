@@ -4,11 +4,17 @@ tailwind.config = {
         extend: {
             colors: {
                 // theme blanc
-                cSection: "#f7fafd",
+                cSection: " #f7fafd",
+                cBackground: " #d8e7f5",
 
                 //theme foncé
-                dSection: "#26292F",
+                dSection: " #24272c",
+                dBackground: " #2e3139",
             }
         }
     }
 }
+
+
+
+

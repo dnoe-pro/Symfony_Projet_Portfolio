@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (localStorage.getItem('theme') === 'dark') {
         html.classList.add('dark');
     }
-
     toggle.addEventListener('click', function () {
         if (html.classList.contains('dark')) {
             html.classList.remove('dark');
@@ -15,3 +14,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
