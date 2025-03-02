@@ -4,99 +4,105 @@
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="{{ asset('js/curseur-gradiant.js')}}"defer></script>
-        <script src="{{ asset('js/theme.js')}}"defer></script>
-        <script src="{{ asset('js/tailwindconfig.js')}}"></script>
+        <script src="{{ asset('js/animation/curseur-animation.js')}}"defer></script>
+        <script src="{{ asset('js/theme/theme-sombre-clair.js')}}"defer></script>
+        <script src="{{ asset('js/theme/tailwindconfig.js')}}"></script>
+        <script src="{{ asset('js/animation/texte-animation.js')}}"></script>
         <link rel="stylesheet" href="{{ asset('css/global.css') }}">
         {# FONTS #}
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto+Mono:wght@400;500;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
-        {# ICONS #}
-        <link rel="import" href="https://img.icons8.com/?size=100&id=59777&format=png&color=000000.html">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         {% block stylesheets %}
         {% endblock %}
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
+    <body class="tracking-wide bg-cBackground dark:bg-dBackground text-[#353535] dark:text-[#f7fafd] flex flex-col min-h-screen">
     <div id="cursor-circle" class="fixed pointer-events-none will-change-transform w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,#1753F0_40%,#d8e7f5_70%)] dark:bg-[radial-gradient(circle,#1753F0_40%,#2e3139_70%)] -z-10 opacity-80 transition-transform duration-200 ease-out"></div>
-    <body class="bg-cBackground dark:bg-dBackground text-[#353535] dark:text-[#f7fafd] flex flex-col min-h-screen">
-        <header class="grid grid-cols-[1fr_450px_450px_450px_1fr] gap-x-[1px] h-[80px] ">
-                <div class="bg-cSection dark:bg-dSection "></div>
+{# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}  
+        <header class="grid grid-cols-[1fr_449px_450px_450px_1fr] gap-x-[1px] h-[90px] ">
                 <div class="bg-cSection dark:bg-dSection ">
-                    <div class="text-2xl flex p-5 justify-center">
+                    <div class="text-2xl flex p-6 justify-center ">
+                    <button onclick="window.location.href='{{ path('app_home') }}'">
                         <img class="w-8 dark:hidden" src="/img/nd-noir.png">
                         <img class="w-8 hidden dark:block" src="/img/nd-blanc.png">
-                        <button onclick="window.location.href='{{ path('app_home') }}'" class="pl-10 font-semibold">Noé Dambreville</button>
+                        </button>
                     </div>
                 </div>
                 <div class="bg-cSection dark:bg-dSection "></div>
-                <div class="bg-cSection dark:bg-dSection ">
-                    <div class="flex p-5 justify-center">
-                        <button id="theme-toggle" class="p-2"> 🌞 / 🌙</button>
-                    </div>
-                </div> 
                 <div class="bg-cSection dark:bg-dSection "></div>
+                <div class="bg-cSection dark:bg-dSection "></div> 
+                <div class="bg-cSection dark:bg-dSection ">
+                    <div class="flex p-6 justify-center">
+                        <button id="theme-toggle" class="p-2"> ☀️ / 🌙</button>
+                    </div>
+
+                </div>
         </header>
+{# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
         <main class="flex-grow">
             {% block body %}{% endblock %}
         </main>
-        <footer class="flex-shrink-0">
-            <div class="flex h-[80px] pt-[1px]">
-                <div class="bg-cSection dark:bg-dSection flex-1 mr-[1px]"></div>
-                <div class="bg-cSection dark:bg-dSection w-[450px] shrink-0 mr-[1px]">
-                    <div class=" mx-auto p-7 text-center">
-                        <button onclick="window.location.href='{{path('app_mention_legales')}}'">Mentions légales</button>
-                    </div>
+{# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
+        <footer class="grid grid-cols-[1fr_450px_450px_449px_1fr] gap-[1px] h-[80px] mt-[1px]">
+            <div class="bg-cSection dark:bg-dSection "></div>
+            <div class="bg-cSection dark:bg-dSection ">
+                <div class=" mx-auto p-7 text-center ">
+                    <button onclick="window.location.href='{{path('app_mention_legales')}}'">Mentions légales</button>
                 </div>
-                <div class="bg-cSection dark:bg-dSection w-[450px] shrink-0">
-                    <div class="mx-auto p-7 text-center">
-                        &copy;dnoe-portfolio
-                    </div>
-                </div>
-                <div class="bg-cSection dark:bg-dSection w-[450px] shrink-0 ml-[1px]"></div>
-                <div class="bg-cSection dark:bg-dSection flex-1 ml-[1px]"></div>
             </div>
+            <div class="bg-cSection dark:bg-dSection ">
+                <div class="mx-auto p-7 text-center">
+                    &copy;dnoe-portfolio
+                </div>
+            </div>
+            <div class="bg-cSection dark:bg-dSection "></div> 
+            <div class="bg-cSection dark:bg-dSection "></div>
         </footer>
-        <br>
-        <header class="grid grid-cols-[1fr_450px_450px_449px_1fr] gap-[1px] h-[80px] mt-[1px]">
-                <div class="bg-cSection dark:bg-dSection ">1</div>
-                <div class="bg-cSection dark:bg-dSection ">2</div>
-                <div class="bg-cSection dark:bg-dSection ">3</div>
-                <div class="bg-cSection dark:bg-dSection ">4</div> 
-                <div class="bg-cSection dark:bg-dSection ">5</div>
-        </header>
-        <section class="grid grid-cols-[1fr_450px_900px_1fr] gap-[1px] h-[350px] mt-[1px]">
-                <div class="bg-cSection dark:bg-dSection ">1</div>
-                <div class="bg-cSection dark:bg-dSection ">2</div>
-                <div class="bg-cSection dark:bg-dSection ">3</div>
-                <div class="bg-cSection dark:bg-dSection ">4</div> 
-        </section>
-        <br>
-        <section class="grid grid-cols-[1fr_900px_450px_1fr] gap-[1px] h-[350px] mt-[1px]">
-                <div class="bg-cSection dark:bg-dSection ">1</div>
-                <div class="bg-cSection dark:bg-dSection ">2</div>
-                <div class="bg-cSection dark:bg-dSection ">3</div>
-                <div class="bg-cSection dark:bg-dSection ">4</div> 
-        </section>
-        <br>
-        <section class="grid grid-cols-[1fr_900px_450px_1fr] gap-[1px] h-[600px] mt-[1px]">
-            <div class="bg-cSection dark:bg-dSection">1</div>
-            <div class="bg-cSection dark:bg-dSection row-span-2 h-[600px]">2</div>
-            <div class="bg-cSection dark:bg-dSection">3</div>
-            <div class="bg-cSection dark:bg-dSection">4</div>
-            <div class="bg-cSection dark:bg-dSection">5</div>
-            <div class="bg-cSection dark:bg-dSection">6</div>
-            <div class="bg-cSection dark:bg-dSection">7</div>
-        </section>
-        <br>
-        <section class="grid grid-cols-[1fr_450px_900px_1fr] gap-[1px] h-[600px] mt-[1px]">
-            <div class="bg-cSection dark:bg-dSection">1</div>
-            <div class="bg-cSection dark:bg-dSection">2</div>
-            <div class="bg-cSection dark:bg-dSection row-span-2 h-[600px]">3</div>
-            <div class="bg-cSection dark:bg-dSection">4</div>
-            <div class="bg-cSection dark:bg-dSection">5</div>
-            <div class="bg-cSection dark:bg-dSection">6</div>
-            <div class="bg-cSection dark:bg-dSection">7</div>
-        </section>
+{# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
+
+{#
+    <section class="grid grid-cols-[1fr_450px_450px_449px_1fr] gap-[1px] h-[80px] mt-[1px]">
+            <div class="bg-cSection dark:bg-dSection ">1</div>
+            <div class="bg-cSection dark:bg-dSection ">2</div>
+            <div class="bg-cSection dark:bg-dSection ">3</div>
+            <div class="bg-cSection dark:bg-dSection ">4</div> 
+            <div class="bg-cSection dark:bg-dSection ">5</div>
+    </section>
+    <section class="grid grid-cols-[1fr_450px_900px_1fr] gap-[1px] h-[350px] mt-[1px]">
+            <div class="bg-cSection dark:bg-dSection ">1</div>
+            <div class="bg-cSection dark:bg-dSection ">2</div>
+            <div class="bg-cSection dark:bg-dSection ">3</div>
+            <div class="bg-cSection dark:bg-dSection ">4</div> 
+    </section>
+    <br>
+    <section class="grid grid-cols-[1fr_900px_450px_1fr] gap-[1px] h-[350px] mt-[1px]">
+            <div class="bg-cSection dark:bg-dSection ">1</div>
+            <div class="bg-cSection dark:bg-dSection ">2</div>
+            <div class="bg-cSection dark:bg-dSection ">3</div>
+            <div class="bg-cSection dark:bg-dSection ">4</div> 
+    </section>
+    <br>
+    <section class="grid grid-cols-[1fr_900px_450px_1fr] gap-[1px] h-[600px] mt-[1px]">
+        <div class="bg-cSection dark:bg-dSection">1</div>
+        <div class="bg-cSection dark:bg-dSection row-span-2 h-[600px]">2</div>
+        <div class="bg-cSection dark:bg-dSection">3</div>
+        <div class="bg-cSection dark:bg-dSection">4</div>
+        <div class="bg-cSection dark:bg-dSection">5</div>
+        <div class="bg-cSection dark:bg-dSection">6</div>
+        <div class="bg-cSection dark:bg-dSection">7</div>
+    </section>
+    <br>
+    <section class="grid grid-cols-[1fr_450px_900px_1fr] gap-[1px] h-[600px] mt-[1px]">
+        <div class="bg-cSection dark:bg-dSection">1</div>
+        <div class="bg-cSection dark:bg-dSection">2</div>
+        <div class="bg-cSection dark:bg-dSection row-span-2 h-[600px]">3</div>
+        <div class="bg-cSection dark:bg-dSection">4</div>
+        <div class="bg-cSection dark:bg-dSection">5</div>
+        <div class="bg-cSection dark:bg-dSection">6</div>
+        <div class="bg-cSection dark:bg-dSection">7</div>
+    </section> 
+#}
     </body>
 </html>
