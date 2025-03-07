@@ -7,7 +7,12 @@
         <script src="{{ asset('js/animation/curseur-animation.js')}}"defer></script>
         <script src="{{ asset('js/theme/theme-sombre-clair.js')}}"defer></script>
         <script src="{{ asset('js/theme/tailwindconfig.js')}}"></script>
-        <script src="{{ asset('js/animation/texte-animation.js')}}"></script>
+        <script src="{{ asset('js/animation/titre-animation.js')}}"></script>
+        <script src="{{ asset('js/animation/scrollbar-animation.js')}}"></script>
+
+        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+        {# Lottie (animation icon) #}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.4/lottie.min.js"></script>
         <link rel="stylesheet" href="{{ asset('css/global.css') }}">
         {# FONTS #}
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
@@ -18,27 +23,37 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body class="tracking-wide bg-cBackground dark:bg-dBackground text-[#353535] dark:text-[#f7fafd] flex flex-col min-h-screen">
-    <div id="cursor-circle" class="fixed pointer-events-none will-change-transform w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,#1753F0_40%,#d8e7f5_70%)] dark:bg-[radial-gradient(circle,#1753F0_40%,#2e3139_70%)] -z-10 opacity-80 transition-transform duration-200 ease-out"></div>
+    <body class="tracking-wide bg-cBackground dark:bg-dBackground text-cText dark:text-dText flex flex-col min-h-screen">
+        <div id="cursor-circle" class="fixed pointer-events-none will-change-transform w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,#1753F0_40%,#d7d7d5_70%)] dark:bg-[radial-gradient(circle,#1753F0_40%,#2e3139_70%)] -z-10 opacity-80 transition-transform duration-200 ease-out"></div>
+        <div id="scrollTopBtn" class="fixed bg-black text-white p-2 rounded-full h-[130px] shadow-lg hidden">
+            <div class="flex flex-col gap-1">
+                <button id="theme-toggle" class="bg-white rounded-full p-0.5 flex items-center justify-center ">
+                    <div id="lottie-container" style="width: 20px; height: 20px;"></div>
+                </button>
+                {# <button id="" class="bg-white rounded-full p-0.5 flex items-center justify-center ">
+                    <div id="lottie-container" style="width: 20px; height: 20px;"></div>
+                </button> #}
+                {# <button id="" class="bg-white text-black rounded-full flex items-center justify-center ">↑</button> #}
+            </div>
+        </div>  
 {# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}  
         <header class="grid grid-cols-[1fr_449px_450px_450px_1fr] gap-x-[1px] h-[90px] ">
-                <div class="bg-cSection dark:bg-dSection ">
-                    <div class="text-2xl flex p-6 justify-center ">
-                    <button onclick="window.location.href='{{ path('app_home') }}'">
-                        <img class="w-8 dark:hidden" src="/img/nd-noir.png">
-                        <img class="w-8 hidden dark:block" src="/img/nd-blanc.png">
-                        </button>
-                    </div>
+            <div class="bg-cSection dark:bg-dSection ">
+                <div class="text-2xl flex p-5 justify-center ">
+                    <button class="w-10"onclick="window.location.href='{{ path('app_home') }}'">
+                        <img class="dark:hidden" src="/img/nd-noir.png">
+                        <img class="hidden dark:block" src="/img/nd-blanc.png">
+                    </button>
                 </div>
-                <div class="bg-cSection dark:bg-dSection "></div>
-                <div class="bg-cSection dark:bg-dSection "></div>
-                <div class="bg-cSection dark:bg-dSection "></div> 
-                <div class="bg-cSection dark:bg-dSection ">
-                    <div class="flex p-6 justify-center">
-                        <button id="theme-toggle" class="p-2"> ☀️ / 🌙</button>
-                    </div>
-
+            </div>
+            <div class="bg-cSection dark:bg-dSection "></div>
+            <div class="bg-cSection dark:bg-dSection "></div>
+            <div class="bg-cSection dark:bg-dSection ">
+                <div class=" mx-auto p-7 text-center ">
+                    <button onclick="window.location.href='{{path('app_contact')}}'">Contact</button>
                 </div>
+            </div> 
+            <div class="bg-cSection dark:bg-dSection p-5"></div>
         </header>
 {# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
         <main class="flex-grow">
@@ -46,7 +61,7 @@
         </main>
 {# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
         <footer class="grid grid-cols-[1fr_450px_450px_449px_1fr] gap-[1px] h-[80px] mt-[1px]">
-            <div class="bg-cSection dark:bg-dSection "></div>
+            <div class="bg-cSection dark:bg-dSection "> </div>
             <div class="bg-cSection dark:bg-dSection ">
                 <div class=" mx-auto p-7 text-center ">
                     <button onclick="window.location.href='{{path('app_mention_legales')}}'">Mentions légales</button>
@@ -57,31 +72,34 @@
                     &copy;dnoe-portfolio
                 </div>
             </div>
-            <div class="bg-cSection dark:bg-dSection "></div> 
+            <div class="bg-cSection dark:bg-dSection ">
+                <div class=" mx-auto p-7 text-center ">
+                    <button onclick="window.location.href='{{path('app_contact')}}'">Contact</button>
+                </div>
+            </div> 
             <div class="bg-cSection dark:bg-dSection "></div>
         </footer>
 {# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
 
-{#
-    <section class="grid grid-cols-[1fr_450px_450px_449px_1fr] gap-[1px] h-[80px] mt-[1px]">
-            <div class="bg-cSection dark:bg-dSection ">1</div>
-            <div class="bg-cSection dark:bg-dSection ">2</div>
-            <div class="bg-cSection dark:bg-dSection ">3</div>
-            <div class="bg-cSection dark:bg-dSection ">4</div> 
-            <div class="bg-cSection dark:bg-dSection ">5</div>
+    {# <section class="grid grid-cols-[1fr_450px_450px_449px_1fr] gap-[1px] h-[80px] mt-[1px]">
+        <div class="bg-cSection dark:bg-dSection ">1</div>
+        <div class="bg-cSection dark:bg-dSection ">2</div>
+        <div class="bg-cSection dark:bg-dSection ">3</div>
+        <div class="bg-cSection dark:bg-dSection ">4</div> 
+        <div class="bg-cSection dark:bg-dSection ">5</div>
     </section>
     <section class="grid grid-cols-[1fr_450px_900px_1fr] gap-[1px] h-[350px] mt-[1px]">
-            <div class="bg-cSection dark:bg-dSection ">1</div>
-            <div class="bg-cSection dark:bg-dSection ">2</div>
-            <div class="bg-cSection dark:bg-dSection ">3</div>
-            <div class="bg-cSection dark:bg-dSection ">4</div> 
+        <div class="bg-cSection dark:bg-dSection ">1</div>
+        <div class="bg-cSection dark:bg-dSection ">2</div>
+        <div class="bg-cSection dark:bg-dSection ">3</div>
+        <div class="bg-cSection dark:bg-dSection ">4</div> 
     </section>
     <br>
     <section class="grid grid-cols-[1fr_900px_450px_1fr] gap-[1px] h-[350px] mt-[1px]">
-            <div class="bg-cSection dark:bg-dSection ">1</div>
-            <div class="bg-cSection dark:bg-dSection ">2</div>
-            <div class="bg-cSection dark:bg-dSection ">3</div>
-            <div class="bg-cSection dark:bg-dSection ">4</div> 
+        <div class="bg-cSection dark:bg-dSection ">1</div>
+        <div class="bg-cSection dark:bg-dSection ">2</div>
+        <div class="bg-cSection dark:bg-dSection ">3</div>
+        <div class="bg-cSection dark:bg-dSection ">4</div> 
     </section>
     <br>
     <section class="grid grid-cols-[1fr_900px_450px_1fr] gap-[1px] h-[600px] mt-[1px]">
@@ -102,7 +120,6 @@
         <div class="bg-cSection dark:bg-dSection">5</div>
         <div class="bg-cSection dark:bg-dSection">6</div>
         <div class="bg-cSection dark:bg-dSection">7</div>
-    </section> 
-#}
+    </section>  #}
     </body>
 </html>
