@@ -4,15 +4,22 @@
 {% block body %}
 <div>
 {# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
-<section class="grid grid-cols-[1fr_1351px_1fr] gap-[1px] h-[350px] mt-[1px]">
-    <div class="bg-cSection dark:bg-dSection "></div>
-    <div class="flex justify-center items-center relative bg-cSection outfit-font dark:bg-dSection text-8xl font-bold p-10">
-        <div class="outfit-font bg-gradient-to-r from-[#1753F0] to-[#567FFF] bg-clip-text text-transparent">
-            <span id="typewriter"></span>
+    <section class="grid grid-cols-[1fr_1351px_1fr] gap-[1px] h-[350px] mt-[1px]">
+        <div class="bg-cSection dark:bg-dSection ">
+            {# <div class="text-2xl flex p-5 justify-center ">
+                <button class="w-10"onclick="window.location.href='{{ path('app_home') }}'">
+                    <img class="dark:hidden" src="/img/nd-noir.png">
+                    <img class="hidden dark:block" src="/img/nd-blanc.png">
+                </button>
+            </div> #}
         </div>
-    </div>
-    <div class="bg-cSection dark:bg-dSection "></div>
-</section>
+        <div class="flex justify-center items-center relative bg-cSection outfit-font dark:bg-dSection text-8xl font-bold p-10">
+            <div class="outfit-font bg-gradient-to-r from-dText to-fText bg-clip-text text-transparent">
+                <span id="typewriter"></span>
+            </div>
+        </div>
+        <div class="bg-cSection dark:bg-dSection "></div>
+    </section>
 {# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
     <section class="grid grid-cols-[1fr_449px_450px_450px_1fr] gap-[1px] h-[350px] mt-[1px]">
         <div class="bg-cSection dark:bg-dSection "></div>
@@ -21,28 +28,25 @@
         <div class="bg-cSection dark:bg-dSection "></div> 
         <div class="bg-cSection dark:bg-dSection "></div>   
     </section>
-    {# <section class="grid grid-cols-[1fr_450px_900px_1fr] gap-[1px] h-[350px] mt-[1px]">
-        <div class="bg-cSection dark:bg-dSection "></div>
-        <div class="bg-cSection dark:bg-dSection "></div>
-        <div class="bg-cSection dark:bg-dSection "></div>
-        <div class="bg-cSection dark:bg-dSection "></div> 
-    </section> #}
 {# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
     <section class="grid grid-cols-[1fr_900px_450px_1fr] gap-[1px] h-[350px] mt-[1px]">
         <div class="bg-cSection dark:bg-dSection "></div>
         <div class="bg-cSection dark:bg-dSection p-10">
-            <div class="text-[28px] outfit-font font-black bg-gradient-to-r from-[#1753F0] to-[#567FFF] bg-clip-text text-transparent">À PROPOS</div>
+            <div class="text-[26px] outfit-font font-bold ">À propos</div>
+            <br>
             <br>
             <div class="text-lg text-justify">
                 Actuellement étudiant en 2ème année de BTS Services Informatiques aux Organisations (SIO),
                 spécialité Solutions Logicielles et Applications Métiers (SLAM) au lycée Jean Jaurès à Aubusson.
-                Passionné du développement qui m'intéresse de près au design graphique et à l'interface utilisateur.
+                Passionné du développement qui m'intéresse de près au design graphique et le back-end.
             </div>
             <br>
-            <button class="font-bold">En savoir plus -></button>
+            <button class="font-bold px-6 py-2 border border-black rounded-full text-black hover:bg-cBackground transition">
+            En savoir plus ->
+            </button>
         </div>
         <div class="bg-cSection dark:bg-dSection p-10">
-            {# <div class="text-3xl font-roboto-flex font-black bg-gradient-to-r from-[#1753F0] to-[#567FFF] bg-clip-text text-transparent">RESEAUX</div>
+            {# <div class="text-3xl font-roboto-flex font-black bg-gradient-to-r from-dText to-fText bg-clip-text text-transparent">RESEAUX</div>
             <br>
             <div class="flex text-dSection dark:text-cSection">
                 <a href="{{ "https://github.com/dnoe-pro" }}" class="" target="_blank" rel="noopener noreferrer">
@@ -64,29 +68,30 @@
         <div class="bg-cSection dark:bg-dSection"></div>
         <div class="bg-cSection dark:bg-dSection"></div>
         <div class="bg-cSection dark:bg-dSection row-span-2 h-[600px] p-10">
-            <div class="text-[28px] outfit-font font-black bg-gradient-to-r from-[#1753F0] to-[#567FFF] bg-clip-text text-transparent">PROJETS</div>
-            <br>
-            <div class="flex pl-8 bg-black h-[100px] items-center relative" style="background-image: url('/img/discord bot.svg'); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-                <div class="text-2xl text-cSection font-roboto-flex font-black relative z-10">BOT Discord</div>
-            </div> 
-            <br>
-            <div class="flex pl-8 bg-black h-[100px] items-center relative" style="background-image: url(''); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-                <div class="text-2xl text-cSection font-roboto-flex font-black relative z-10">texte</div>
-            </div> 
-            <br>
-            <div class="flex pl-8 bg-black h-[100px] items-center relative" style="background-image: url(''); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-                <div class="text-2xl text-cSection font-roboto-flex font-black relative z-10">texte</div>
-            </div> 
-            <br>
-            <div class="flex pl-8 bg-black h-[100px] items-center relative" style="background-image: url(''); background-size: cover; background-position: center;">
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-                <div class="text-2xl text-cSection font-roboto-flex font-black relative z-10">texte</div>
-            </div> 
-
-        </div>
+            <div class="text-[26px] outfit-font font-bold ">Projets</div>
+            <br><br> 
+            {# <div class="overflow-auto h-[420px]"> <!-- Ajuste la hauteur selon tes besoins -->
+                <div class="flex pl-8 border hover:bg-cBackground border-black h-[100px] items-center relative" style="background-image: url(''); background-size: cover; background-position: center;">
+                    <div class="text-2xl font-roboto-flex font-bold relative z-10">BOT Discord</div>
+                </div>
+                <br>
+                <div class="flex pl-8 border hover:bg-cBackground border-black h-[100px] items-center relative" style="background-image: url(''); background-size: cover; background-position: center;">
+                    <div class="text-2xl font-roboto-flex font-bold relative z-10">Constructeur de classe</div>
+                </div>
+                <br>
+                <div class="flex pl-8 border hover:bg-cBackground border-black h-[100px] items-center relative" style="background-image: url(''); background-size: cover; background-position: center;">
+                    <div class="text-2xl font-roboto-flex font-bold relative z-10">Siteweb d'escalade</div>
+                </div>
+                <br>
+                <div class="flex pl-8 border hover:bg-cBackground border-black h-[100px] items-center relative" style="background-image: url(''); background-size: cover; background-position: center;">
+                    <div class="text-2xl font-roboto-flex font-bold relative z-10">...</div>
+                </div> 
+                <br>
+                <div class="flex pl-8 border hover:bg-cBackground  border-black h-[100px] items-center relative" style="background-image: url(''); background-size: cover; background-position: center;">
+                    <div class="text-2xl font-roboto-flex font-bold relative z-10">...</div>
+                </div> 
+            </div> #}
+        </div>  
     <div class="bg-cSection dark:bg-dSection"></div>
     <div class="bg-cSection dark:bg-dSection"></div>
     <div class="bg-cSection dark:bg-dSection"></div>
@@ -96,22 +101,77 @@
     <section class="grid grid-cols-[1fr_900px_450px_1fr] gap-[1px] h-[600px] mt-[1px]">
             <div class="bg-cSection dark:bg-dSection"></div>
             <div class="bg-cSection dark:bg-dSection row-span-2 h-[600px] p-10">
-            <div class="text-3xl font-roboto-flex font-black bg-gradient-to-r from-[#1753F0] to-[#567FFF] bg-clip-text text-transparent">DOCUMENTATION</div>
-                <br>
-                <div class="flex">
+                <div class="text-[26px] outfit-font font-bold">Documentations</div>
+                <br><br>
+                <div class="flex" x-data="{ 
+                    selectedCategory: 'vulnerabilites', 
+                    categories: {
+                        'vulnerabilites': [
+                            { name: 'Injection SQL', url: '/docs/injctionSql' },
+                            { name: 'Brute force', url: '' },
+                            { name: 'Path Traversal', url: '' },
+                            { name: 'Malwares', url: '' },
+                            { name: 'DDoS (Déni de Service Distribué)', url: '' },
+                            { name: 'XSS (Cross-Site Scripting)', url: '' },
+                            { name: 'CSRF (Cross-Site Request Forgery)', url: '' }
+                        ],
+                        'langages': [
+                            { name: 'PHP', url: '' },
+                            { name: 'JavaScript', url: '' },
+                            { name: 'Python', url: '' }
+                        ],
+                        'frameworks': [
+                            { name: 'Symfony', url: '' },
+                            { name: 'Tailwind', url: '' },
+                            { name: 'Node.JS', url: '' }
+                        ],
+                        'autres': [
+                            { name: 'Docker', url: '' },
+                            { name: 'Git', url: '' },
+                            { name: 'API REST', url: '' }
+                        ]
+                    }
+                }">
+                    {# Colonne des catégories #}
                     <div class="w-1/2">
-                        <div class="font-bold">Fiche de vulnérabilité</div>
-                    <br>
-                    <div>PHP</div>
-                    <div>JAVA</div>
+                        <div class="text-[22px]">Catégories :</div>
+                        <br>
+                        <div class="space-y-2">
+                            <div 
+                                class="cursor-pointer transition duration-300" 
+                                :class="selectedCategory === 'vulnerabilites' ? 'font-bold' : 'hover:font-bold'" 
+                                @click="selectedCategory = 'vulnerabilites'"> Fiche de vulnérabilité
+                            </div>
+                            <div 
+                                class="cursor-pointer transition duration-300" 
+                                :class="selectedCategory === 'langages' ? 'font-bold' : 'hover:font-bold'" 
+                                @click="selectedCategory = 'langages'"> Langage de programmation
+                            </div>
+                            <div 
+                                class="cursor-pointer transition duration-300" 
+                                :class="selectedCategory === 'frameworks' ? 'font-bold' : 'hover:font-bold'" 
+                                @click="selectedCategory = 'frameworks'"> Framework
+                            </div>
+                            <div 
+                                class="cursor-pointer transition duration-300" 
+                                :class="selectedCategory === 'autres' ? 'font-bold' : 'hover:font-bold'" 
+                                @click="selectedCategory = 'autres'"> Autres
+                            </div>
+                        </div>
                     </div>
-                    <div class="w-1/2">
-                    <div>Frameworks</div>
-                    <br>
-                    <div>Symfony</div>
-                    <div>Tailwind</div>
-                    <div>Node.JS </div>
+                    {# Colonne dynamique#}
+                    <div class="w-1/2 ">
+                        <div class="text-[22px]">Contenus :</div>
+                        <br>
+                        <template x-if="categories[selectedCategory]">
+                            <div>
+                                <template x-for="item in categories[selectedCategory]" :key="item.name">
+                                    <a :href="item.url" class="block hover:underline hover:text-blue-700 transition duration-200" x-text="item.name"></a>
+                                </template>
+                            </div>
+                        </template>
                     </div>
+
                 </div>
             </div>
             <div class="bg-cSection dark:bg-dSection"></div>
@@ -121,19 +181,22 @@
             <div class="bg-cSection dark:bg-dSection"></div>
         </section>
 {# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
-    <section class="grid grid-cols-[1fr_450px_900px_1fr] gap-[1px] h-[600px] mt-[1px]">
-        <div class="bg-cSection dark:bg-dSection"></div>
-        <div class="bg-cSection dark:bg-dSection"></div>
-        <div class="bg-cSection dark:bg-dSection row-span-2 h-[600px] p-10">
-            <div class="text-3xl font-roboto-flex font-black bg-gradient-to-r from-[#1753F0] to-[#567FFF] bg-clip-text text-transparent">ACTUALITES</div>
-            <br>
-        </div>
-        <div class="bg-cSection dark:bg-dSection"></div>
-        <div class="bg-cSection dark:bg-dSection"></div>
-        <div class="bg-cSection dark:bg-dSection"></div>
-        <div class="bg-cSection dark:bg-dSection"></div>
+
+    <section class="grid grid-cols-[1fr_449px_450px_450px_1fr] gap-[1px] h-[350px] mt-[1px]">
+        <div class="bg-cSection dark:bg-dSection "></div>
+        <div class="bg-cSection dark:bg-dSection "></div>
+        <div class="bg-cSection dark:bg-dSection "></div>
+        <div class="bg-cSection dark:bg-dSection "></div> 
+        <div class="bg-cSection dark:bg-dSection "></div>   
     </section>
-    
+{# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
+    <section class="grid grid-cols-[1fr_1351px_1fr] gap-[1px] h-[350px] mt-[1px]">
+        <div class="bg-cSection dark:bg-dSection "></div>
+        <div class="bg-cSection dark:bg-dSection p-10">
+            <div class="text-[26px] outfit-font font-bold">Actualités</div>
+        </div>
+        <div class="bg-cSection dark:bg-dSection "></div>
+    </section>
 {# -------------------------------------------------------------------------------------------------------------------------------------------------------- #}
 </div>
 {% endblock %}
